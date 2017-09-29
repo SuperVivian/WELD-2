@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{4F29CFE2-626A-93E9-C967-D95878ED80EB}") = "WELD-2", "Assembly-UnityScript.unityproj", "{94FE0EF8-B5BB-3257-91CF-2676B21A3620}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WELD-2", "Assembly-CSharp.csproj", "{1B442CA6-4D47-F7C7-743F-F53BFB713682}"
 EndProject
 Global
@@ -11,10 +9,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{94FE0EF8-B5BB-3257-91CF-2676B21A3620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94FE0EF8-B5BB-3257-91CF-2676B21A3620}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94FE0EF8-B5BB-3257-91CF-2676B21A3620}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94FE0EF8-B5BB-3257-91CF-2676B21A3620}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B442CA6-4D47-F7C7-743F-F53BFB713682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B442CA6-4D47-F7C7-743F-F53BFB713682}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B442CA6-4D47-F7C7-743F-F53BFB713682}.Release|Any CPU.ActiveCfg = Release|Any CPU

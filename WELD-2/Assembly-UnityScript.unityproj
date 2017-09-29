@@ -51,15 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_AssaultBehavior.js" />
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_AssaultPrefabGenerator.js" />
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_destroyThisTimed.js" />
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_destroyThisTimed1.js" />
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_IdleBehavior.js" />
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_moveThis.js" />
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_rotateThis.js" />
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_WalkBehavior.js" />
-     <Compile Include="Assets\MiniSoldierPack\Resources\Scripts\MS_WalkPrefabGenerator.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_AssaultBehavior.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_AssaultPrefabGenerator.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_destroyThisTimed.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_destroyThisTimed1.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_IdleBehavior.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_moveThis.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_rotateThis.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_WalkBehavior.js" />
+     <Compile Include="Assets\PlayerTest\MiniSoldierPack\Resources\Scripts\MS_WalkPrefabGenerator.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/unity2017/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

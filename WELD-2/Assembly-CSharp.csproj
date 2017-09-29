@@ -52,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\JoyStickTest\JoyStickTest.cs" />
+     <Compile Include="Assets\PlayerTest\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\PlayerTest\Scripts\PlayerMove.cs" />
+     <Compile Include="Assets\PlayerTest\Scripts\SwitchOn.cs" />
+     <Compile Include="Assets\PlayerTest\Scripts\Transfer.cs" />
+     <Compile Include="Assets\rotation.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/unity2017/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
