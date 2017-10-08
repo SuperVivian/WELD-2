@@ -6,30 +6,34 @@ public class launchbullets : MonoBehaviour {
     private RaycastHit hit;
     private Ray ray;
     public Vector3 raydirection;
-    public GameObject bullets;
+    public bullets bullets;
+    public float tiaozhengz;
+    public float tiaozhengx;
     public float timer;
     private float nowtimer;
 
 	// Use this for initialization
 	void Start () {
-		ray = new Ray(this.gameObject.transform.position,raydirection );
+		
         nowtimer = 0.0f;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        ray = new Ray(transform.position, raydirection);
         if (Physics.Raycast(ray, out hit))
-            if (hit.rigidbody.tag == "Player")
+        if (hit.rigidbody)
+        {
+                print(hit.transform.name);
                 if (nowtimer >= timer)
                 {
-                    GameObject bullet;
-                    bullets bu;
-                    bullet = Instantiate(bullets, this.transform);
-                    bu = bullet.GetComponent<bullets>();
-                    bu.dirr = raydirection.normalized;
-                    timer = 0.0f;
+                    bullets clone;
+                    clone = Instantiate(bullets,transform.position,transform.rotation);
+                    clone.dirr = raydirection.normalized;
+                    nowtimer = 0.0f;
                 }
                 else
                     nowtimer += Time.deltaTime;
+        }
     }
 }

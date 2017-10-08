@@ -21,6 +21,10 @@ public class bullets : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-     
+        if (other.tag == "Player")
+            return;
+
+        if (other.gameObject.layer == 8)
+            Destroy(this);
     }
 }

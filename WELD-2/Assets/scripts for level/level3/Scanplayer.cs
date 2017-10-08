@@ -15,10 +15,11 @@ public class Scanplayer : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
+
             float xchange = (other.gameObject.transform.position - machinegun1.transform.position).x /100;
             machinegun1.transform.position = new Vector3(machinegun1.transform.position.x+xchange*V*Time.deltaTime,machinegun1.transform.position.y,machinegun1.transform.position.z);
             

@@ -6,10 +6,10 @@ public class switchesss : MonoBehaviour {
     public bool isactive;
 	// Use this for initialization
 	void Start () {
-		
+        isactive = false;
 	}
 	
-	// Update is called once per frame
+	// Update is called once  per frame
 	void Update () {
 		
 	}
