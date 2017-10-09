@@ -16,7 +16,11 @@ public class LineControl : MonoBehaviour {
 
 	public int norSenceLayer;//需要建立一个碰撞后消失的场景层。
 	public int mirrorLayer;//需要建立一个碰撞后反射的镜子层。
+	public Target target;//目标靶
 
+
+
+	Ray ray;
 
 
 	 Vector3[] lineRander;
@@ -24,49 +28,137 @@ public class LineControl : MonoBehaviour {
 
 	LineRenderer lineShoot;
 
+	private LayerMask mask;
+
 
 	// Use this for initialization
 	void Start () {
 
 		this.transform.localEulerAngles += new Vector3(0, 0, 180);
 
+		lineRander = new Vector3[100];
 
-
-		changeToRotate = -rotationMax / echange.changeMax;
+		changeToRotate = rotationMax / echange.changeMax;
 
 		lineShoot = GetComponent<LineRenderer>();
 
-		lengthOfRender = 0;
+
+		mask = (1 << norSenceLayer) | (1 << mirrorLayer);
+
+
+
+
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		changeFirstCube();
+
+
+		this.transform.localEulerAngles = new Vector3(0, 0, echange.changeX * changeToRotate + 180);
+
+		lineDir = this.transform.up;
+
+
+		lengthOfRender = 0;
+		lineRander[lengthOfRender] = this.transform.position;
+		lengthOfRender++;
+
+
+		rayLine();
 		drawline();
 
+
+
+
 	}
 
 
-	private void changeFirstCube()
+	private void rayLine()
 	{
+		ray.origin = this.transform.position;
+		ray.direction = lineDir;
+		RaycastHit hit;
+
+		int nuber = 0;
 
 
-		lineDir = new Vector3(0, 0, echange.changeX * changeToRotate) + new Vector3(0, 0, 180);
-		this.transform.localEulerAngles = lineDir;
+		Physics.Raycast(ray, out hit, 1000f, mask);
+		while(hit.transform.gameObject.layer==mirrorLayer&&nuber<7)
+		{
+			ray.origin = hit.point;
+
+			if (Vector3.Angle(ray.direction, -hit.normal) > 3f)
+			{
+				
+				//ray.direction = ray.direction + Mathf.Cos(Vector3.Angle(-ray.direction.normalized, hit.normal.normalized)) * hit.normal.normalized*2 ;
+
+				ray.direction = Vector3.Dot(-ray.direction.normalized, hit.normal.normalized) * hit.normal.normalized * 2 + ray.direction;
+
+
+			}
+			else
+			{
+				ray.direction = -ray.direction;
+			}
+			lineRander[lengthOfRender] = hit.point;
+			lengthOfRender++;
+			Physics.Raycast(ray, out hit, 1000f, mask);
+
+			nuber++;
+
+		}
 
 
 
+		if(hit.transform.gameObject.name == target.transform.gameObject.name)
+		{
+
+			target.open = true;
+
+		}
+		else
+		{
+			target.open = false;
+		}
+
+
+		
+
+		lineRander[lengthOfRender] = hit.point;
+
+		
+
+
+
+	
 
 
 
 	}
+
+
+
 
 	private void drawline()
 	{
-		for (int length = 0; length < lengthOfRender; length++)
+
+		lineShoot.positionCount = lengthOfRender+1;
+		for (int length = 0; length <= lengthOfRender; length++)
+		{
 			lineShoot.SetPosition(length, lineRander[length]);
+		}
+
+
+		lengthOfRender = 0;
+
+
+
 	}
+
+
+
+
 
 
 }

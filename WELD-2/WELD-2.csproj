@@ -94,6 +94,7 @@
     <Compile Include="Assets\PlayerTest\Scripts\Transfer.cs" />
     <Compile Include="Assets\script\sence1\Echange.cs" />
     <Compile Include="Assets\script\sence1\LineControl.cs" />
+    <Compile Include="Assets\script\sence1\Target.cs" />
     <Compile Include="Assets\script\sence1\theMovePlane.cs" />
     <Compile Include="Assets\WheelTest\rotation.cs" />
   </ItemGroup>
