@@ -4,28 +4,52 @@ using UnityEngine;
 
 public class Lands : MonoBehaviour
 {
-    public Vector3 position1;
-    public Vector3 position2;
-    public float state;
-    //state ==1.0f means the land is on the top of elevator;
+    public switch1 switch11;
+    public switch2 switch22;
+    public bool isgo;
+    public float maxy;
+    public float miny;
+
+
 
     private void Start()
     {
-        state = 1.0f;
+        isgo = false;
     }
 
     private void Update()
     {
-   
+        if (switch11.isactive1 && switch22.isactive2 == false)
+        {
+            if (maxy - this.gameObject.transform.position.y > this.gameObject.transform.position.y - miny)
+            {
+                isgo = true;
+                switch11.isactive1 = false;
+
+            }
+            else
+                return;
+        }
+
+        if (switch11.isactive1 == false && switch22.isactive2)
+        {
+            if (maxy - this.gameObject.transform.position.y < this.gameObject.transform.position.y - miny)
+            {
+                isgo = true;
+                switch22.isactive2 = false;
+            }
+            else
+                return;
+        }
     }
 
-
-    void Judgetheposition()
+    void OnTriggerEnter(Collider other)
     {
-        if (this.gameObject.transform.position.y >= position1.y)
-            state = 1.0f;
-        if (this.gameObject.transform.position.y <= position2.y)
-            state = 2.0f;
+        if (other.tag == "Player")
+        {
+            isgo = true;
+        }
     }
+
 
 }

@@ -25,6 +25,6 @@ public class bullets : MonoBehaviour {
             return;
 
         if (other.gameObject.layer == 8)
-            Destroy(this);
+            Destroy(this.gameObject);
     }
 }

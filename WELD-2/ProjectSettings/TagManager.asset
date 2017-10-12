@@ -8,6 +8,9 @@ TagManager:
   - LeftWall
   - RightWall
   - launcher
+  - transportin
+  - deathline
+  - levelbox
   layers:
   - Default
   - TransparentFX
@@ -18,12 +21,12 @@ TagManager:
   - 
   - 
   - wall
+  - mirror
+  - nonescence
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - bullets
   - 
   - 
   - 

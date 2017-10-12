@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class switch1 : MonoBehaviour {
-    public Vector3 position1;
-    public Vector3 position2;
-
+    public bool isactive1;
 
 	// Use this for initialization
 	void Start () {
+        isactive1 = false;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player1" )
-        {
-
-        }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+            isactive1 = true;
+    }
+
 }
