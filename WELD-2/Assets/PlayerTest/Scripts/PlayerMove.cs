@@ -6,10 +6,14 @@ public class PlayerMove : MonoBehaviour {
     public float MoveSpeed = 10.0f;
     public float JumpSpeed = 10.0f;
     private Rigidbody rb;
+    public Script4change hp;
     //public string button;
     public string AxisHorizontal;
     public string AxisVertical;
     public KeyCode JumpCode;
+    public KeyCode KillSelf;
+    public float timer;
+    private float nowtime;
     public bool IsGround = false;
     public bool LeftWall = false;
     public bool RightWall = false;
@@ -18,6 +22,7 @@ public class PlayerMove : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        nowtime = timer;
        
     }
 
@@ -45,6 +50,18 @@ public class PlayerMove : MonoBehaviour {
                 velocity.y = JumpSpeed;
                 rb.velocity = velocity;
             }
+        }
+
+        if (Input.GetKey(KillSelf))
+        {
+            timer -= Time.deltaTime;
+            Debug.Log(timer);
+            if (timer <= 0.0f)
+            {
+                timer = nowtime;
+                hp.health = 0.0f;
+            }
+
         }
     }
 
